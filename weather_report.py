@@ -3,6 +3,7 @@ import os
 import requests
 import json
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 # 从测试号信息获取
 appID = os.environ.get("APP_ID")
@@ -110,6 +111,9 @@ def send_weather(access_token, weather):
             },
             "today_note": {
                 "value": get_daily_love()
+            },
+            "distant_love": {
+                 "value": days_until_target()
             }
         }
     }
@@ -126,6 +130,15 @@ def weather_report(this_city):
     print(f"天气信息： {weather}")
     # 3. 发送消息
     send_weather(access_token, weather)
+
+def days_until_target():
+    # 目标日期
+    target_date = datetime(2025, 1, 7)
+    # 当前日期
+    current_date = datetime.now()
+    # 计算天数差
+    days_difference = (current_date - target_date).days
+    return days_difference + 1
 
 
 
