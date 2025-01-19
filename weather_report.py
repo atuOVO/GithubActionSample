@@ -139,7 +139,7 @@ def arith_bri_day():
     # 获取当前日期和时间
     current_date = datetime.now()
     # 计算剩余时间
-    remaining_time = target_date - current_date
+    remaining_time = (target_date - current_date).days
     return remaining_time
 
 def days_until_target():
