@@ -114,6 +114,9 @@ def send_weather(access_token, weather):
             },
             "distant_love": {
                  "value": days_until_target()
+            },
+            "distant_bri": {
+                 "value": arith_bri_day()
             }
         }
     }
@@ -130,6 +133,14 @@ def weather_report(this_city):
     print(f"天气信息： {weather}")
     # 3. 发送消息
     send_weather(access_token, weather)
+
+def arith_bri_day():
+    target_date = datetime.datetime(2025, 10, 22)
+    # 获取当前日期和时间
+    current_date = datetime.datetime.now()
+    # 计算剩余时间
+    remaining_time = target_date - current_date
+    return remaining_time
 
 def days_until_target():
     # 目标日期
