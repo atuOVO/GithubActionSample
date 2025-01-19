@@ -135,9 +135,9 @@ def weather_report(this_city):
     send_weather(access_token, weather)
 
 def arith_bri_day():
-    target_date = datetime.datetime(2025, 10, 22)
+    target_date = datetime(2025, 10, 22)
     # 获取当前日期和时间
-    current_date = datetime.datetime.now()
+    current_date = datetime.now()
     # 计算剩余时间
     remaining_time = target_date - current_date
     return remaining_time
