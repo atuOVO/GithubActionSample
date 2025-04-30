@@ -160,7 +160,7 @@ def arith_marry_day():
     current_date = datetime.now()
     # 计算剩余时间
     remaining_time1 = (target_date - current_date).days
-    return remaining_time1
+    return remaining_time1 + 1
 
 
 
