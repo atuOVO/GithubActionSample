@@ -117,6 +117,9 @@ def send_weather(access_token, weather):
             },
             "distant_bri": {
                  "value": arith_bri_day()
+            },
+            "distant_marry": {
+                 "value": arith_marry_day()
             }
         }
     }
@@ -150,6 +153,14 @@ def days_until_target():
     # 计算天数差
     days_difference = (current_date - target_date).days
     return days_difference + 1
+
+def arith_marry_day():
+    target_date = datetime(2025, 5, 20)
+    # 获取当前日期和时间
+    current_date = datetime.now()
+    # 计算剩余时间
+    remaining_time1 = (target_date - current_date).days
+    return remaining_time1
 
 
 
